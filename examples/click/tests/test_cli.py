@@ -45,6 +45,14 @@ def test_example_command():
     assert result.exit_code == 0
 
 
+def test_example_command_bug():
+    """
+    Is command available?
+    """
+    result = shell('foobar nonexistant-command --help')
+    assert result.exit_code != 0
+
+
 # NOTE:
 # You can continue here, adding all CLI command combinations
 # using a non-destructive option, such as --help, to test for
